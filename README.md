@@ -6,5 +6,5 @@ To change the thumbnails you get just change the contence of the referance file 
 #Making a list of Video ID's
 
 The format of the text file must be one video id per line
-If you open the share box and copy this link you want [https://youtu.be/_*Rykmwn0SMWU*_](https://youtu.be/Rykmwn0SMWU) you want the bolded portion
+If you open the share box and copy this link you want [https://youtu.be/**_Rykmwn0SMWU_**](https://youtu.be/Rykmwn0SMWU) you want the bolded portion
 
