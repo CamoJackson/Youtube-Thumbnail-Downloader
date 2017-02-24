@@ -11,7 +11,11 @@ set /p NUMIN=<TempFile
 :Loop
 findstr /r /n "." Ref.txt | findstr "%NUMIN%:" > TempFile
 set /p VIDID=<TempFile
-set VIDID=%VIDID:~2%
+
+:RmLnNum
+findstr /R "*:" %VIDID% 
+set VIDID=%VIDID:~1%
+
 set DOWNLOCATION= http://img.youtube.com/vi/%VIDID%/maxresdefault.jpg
 set LOCLOCATION=%SAVELOCATION%%VIDID%.jpg
 bitsadmin /transfer DownloadThumb /download %DOWNLOCATION% %LOCLOCATION%
