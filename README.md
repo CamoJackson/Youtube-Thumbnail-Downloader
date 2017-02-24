@@ -6,6 +6,7 @@ The pictures download slowly because the program works entierly in the backgroun
 
 #Making a list of Video ID's
 
+This programe only works with a maximum of 1000 video ids
 The format of the text file must be one video id per line
 If you open the share box and copy this link you want [https://youtu.be/**_Rykmwn0SMWU_**](https://youtu.be/Rykmwn0SMWU) you want the bolded portion
 You can use ref.txt as an example
