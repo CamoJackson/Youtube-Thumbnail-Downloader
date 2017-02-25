@@ -1,5 +1,6 @@
 echo off
 SETLOCAL ENABLEEXTENSIONS
+SETLOCAL ENABLEDELAYEDEXPANSION
 SET me=%~n0
 SET parent=%~dp0
 
@@ -9,36 +10,29 @@ set REFFILE=C:\Users\%USERNAME%\Desktop\Ref.txt
 findstr /R /N "^" %REFFILE% | find /C ":" > TempFile
 set /p NUMIN=<TempFile
 :Loop
-findstr /r /n "." Ref.txt | findstr "%NUMIN%:" > TempFile
-set VIDID=<TempFile
+findstr /r /n "." Ref.txt | findstr %NUMIN%":" > TempFile
+set /p VIDID=<TempFile
 
-if %NUMIN% GEQ 1000 (
-set NUMREM=5
+if %NUMIN% GEQ 1000 goto :N5
+if %NUMIN% GEQ 100 goto :N4
+if %NUMIN% GEQ 10 goto :N3
+if %NUMIN% GEQ 1 goto :N2
+
+:N5
+set VIDID=%VIDID:~5%
 goto :NumDone
-)
-
-if %NUMIN% GEQ 100 (
-set NUMREM=4
+:N4
+set VIDID=%VIDID:~4%
 goto :NumDone
-)
-
-if %NUMIN% GEQ 10 (
-set NUMREM=3
+:N3
+set VIDID=%VIDID:~3%
 goto :NumDone
-)
-
-if %NUMIN% GEQ 1 (
-set NUMREM=2
+:N2
+set VIDID=%VIDID:~2%
 goto :NumDone
-)
-
-echo "ERROR: more than 1000 Video ID's"
-pause
-quit
 
 :NumDone
-Pause
-set VIDID=!VIDID:~%NUMREM%!
+echo %VIDID%
 Pause
 set DOWNLOCATION= http://img.youtube.com/vi/%VIDID%/maxresdefault.jpg
 set LOCLOCATION=%SAVELOCATION%%VIDID%.jpg
