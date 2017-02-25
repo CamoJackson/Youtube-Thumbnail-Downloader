@@ -4,7 +4,7 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 SET me=%~n0
 SET parent=%~dp0
 
-set SAVELOCATION=C:\Users\%USERNAME%\Desktop\
+set SAVELOCATION=%parent%
 set REFFILE=%parent%Ref.txt
 
 findstr /R /N "^" %REFFILE% | find /C ":" > TempFile
@@ -33,7 +33,6 @@ goto :NumDone
 
 :NumDone
 echo %VIDID%
-Pause
 set DOWNLOCATION= http://img.youtube.com/vi/%VIDID%/maxresdefault.jpg
 set LOCLOCATION=%SAVELOCATION%%VIDID%.jpg
 bitsadmin /transfer DownloadThumb /download %DOWNLOCATION% %LOCLOCATION%
