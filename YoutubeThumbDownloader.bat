@@ -5,7 +5,7 @@ SET me=%~n0
 SET parent=%~dp0
 
 set SAVELOCATION=C:\Users\%USERNAME%\Desktop\
-set REFFILE=C:\Users\%USERNAME%\Desktop\Ref.txt
+set REFFILE=%parent%Ref.txt
 
 findstr /R /N "^" %REFFILE% | find /C ":" > TempFile
 set /p NUMIN=<TempFile
