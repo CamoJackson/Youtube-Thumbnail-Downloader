@@ -1,4 +1,5 @@
 # Youtube-Thumbnail-Downloader
+<h3>This software is provieded as is with no guarantee of support from the author!</h3>  
 This allows you to download Youtube video thumbnails at the highest resolution from a list of video ids
 In order to change the download location of the photos just change the variable SAVELOCATION to equal whatever you want (For example: C:\Users\%USERNAME%\Desktop\ to C:\Youtube)
 To change the thumbnails you get just change the contence of the referance file or change the variable REFFILE from C:\Users\%USERNAME%\Desktop\Ref.txt to the loaction of the file that contains the video id's C:\Youtube\VidIDs.txt
